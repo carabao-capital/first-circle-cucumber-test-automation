@@ -13,11 +13,24 @@ jobs:
           name: install the gem
           command: bundle
       - run:
-          name: install brew
-          command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)
+          name: Download latest version of chromedriver
+          command: wget "https://chromedriver.storage.googleapis.com/72.0.3626.69/chromedriver_linux64.zip"
+
       - run:
-          name: install chromedriver
-          command: brew cask install chromedriver
+          name: Unzip chromedriver
+          command: sudo unzip chromedriver_linux64.zip
+    
+      - run:
+          name: Move chromedriver
+          command: sudo mv chromedriver /usr/local/bin/chromedriver
+
+      - run:
+          name: Change permission of chromedriver
+          command: sudo chown root:root /usr/local/bin/chromedriver
+
+      - run:
+          name: Change permission of chromedriver
+          command: sudo chmod +x /usr/local/bin/chromedriver
       - run:
           name: run tests
           command: cucumber
