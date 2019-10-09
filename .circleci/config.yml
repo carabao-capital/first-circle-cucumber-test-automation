@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4-node
+      - image: 'nbulai/ruby-chromedriver:latest'
 
     steps:
       - checkout
@@ -12,9 +12,6 @@ jobs:
       - run:
           name: install the gem
           command: bundle
-      - run:
-          name: install chromedriver
-          command: brew cask install chromedriver
       - run:
           name: run tests
           command: cucumber
