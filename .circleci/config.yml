@@ -35,6 +35,9 @@ jobs:
           name: Change permission of chromedriver
           command: sudo chmod +x /usr/local/bin/chromedriver
       - run:
+          name: check chromedriver
+          command: chromedriver --version
+      - run:
           name: run tests
           command: cucumber
       - run:
