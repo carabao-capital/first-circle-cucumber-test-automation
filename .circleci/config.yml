@@ -10,6 +10,9 @@ jobs:
           name: Install Cucumber
           command: gem install cucumber
       - run:
+          name: Install Selenium-Webdriver
+          command: gem install selenium-webdriver
+      - run:
           name: install the gem
           command: bundle
       - run:
