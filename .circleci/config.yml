@@ -14,7 +14,7 @@ jobs:
           command: bundle
       - run:
           name: install brew
-          command: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+          command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       - run:
           name: install chromedriver
           command: brew cask install chromedriver
