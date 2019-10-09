@@ -17,7 +17,7 @@ end
   
 Then("Customer should be successfully logged in FCA") do
     wait = Selenium::WebDriver::Wait.new(timeout: 10)
-    wait.until { driver.find_element(css: "a.ds-btnafad")}
+    wait.until { driver.find_element(css: "a.ds-btn")}
     driver.quit
 end
   
