@@ -12,11 +12,12 @@ jobs:
       - run:
           name: install the gem
           command: bundle
-
+      - run:
+          name: install chromedriver
+          command: brew cask install chromedriver
       - run:
           name: run tests
           command: cucumber
-
       - run:
           name: Save test results
           command: |
