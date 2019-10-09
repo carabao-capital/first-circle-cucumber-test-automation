@@ -2,8 +2,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 
 driver = Selenium::WebDriver.for :chrome
-Given("Customer loads FCA login page in \"([^\"]*)\"$")(environment) do
-    driver.get "https://"environment".my.firstcircle.ph/login"
+Given("Customer loads FCA login page") do
+    driver.get "https://preprod.my.firstcircle.ph/login"
 end
   
 When("Customer submits valid login credentials") do
