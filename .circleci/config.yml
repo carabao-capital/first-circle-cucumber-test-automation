@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: 'nbulai/ruby-chromedriver:latest'
+      - image: ruby-chromedriver
 
     steps:
       - checkout
