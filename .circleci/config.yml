@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: ruby-chromedriver
+      - image: circleci/ruby:2.3.7-jessie-node-browsers
 
     steps:
       - checkout
