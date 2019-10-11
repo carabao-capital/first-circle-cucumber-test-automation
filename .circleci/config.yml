@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.2-jessie-node
+      - image: nbulai/ruby-chromedriver:latest
 
     steps:
       - checkout
@@ -19,21 +19,21 @@ jobs:
           name: Download latest version of chromedriver
           command: wget "https://chromedriver.storage.googleapis.com/2.46/chromedriver_mac64.zip"
 
-      - run:
-          name: Unzip chromedriver
-          command: sudo unzip chromedriver_mac64.zip
+    #   - run:
+    #       name: Unzip chromedriver
+    #       command: sudo unzip chromedriver_mac64.zip
     
-      - run:
-          name: Move chromedriver
-          command: sudo mv chromedriver /usr/local/bin/chromedriver
+    #   - run:
+    #       name: Move chromedriver
+    #       command: sudo mv chromedriver /usr/local/bin/chromedriver
 
-      - run:
-          name: Change permission of chromedriver
-          command: sudo chown root:root /usr/local/bin/chromedriver
+    #   - run:
+    #       name: Change permission of chromedriver
+    #       command: sudo chown root:root /usr/local/bin/chromedriver
 
-      - run:
-          name: Change permission of chromedriver
-          command: sudo chmod +x /usr/local/bin/chromedriver
+    #   - run:
+    #       name: Change permission of chromedriver
+    #       command: sudo chmod +x /usr/local/bin/chromedriver
       - run:
           name: check chromedriver
           command: chromedriver --version
